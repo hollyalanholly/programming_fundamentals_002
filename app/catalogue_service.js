@@ -23,23 +23,51 @@ const catalogue = [
 ];
 
 function countBooks() {
+  return catalogue.length;
   // Your code here
 }
 
 function checkBook(book) {
-  // Your code here
-}
+  const isInArray =catalogue.includes(book); {
+    return isInArray;
+  }
+ }
 
-function countBooksByFirstLetter(letter) {
-  // Your code here
-}
+  function countBooksByFirstLetter(letter) { 
+      let count = 0;
+      for (let i = 0; i < (catalogue.map((first) => first[0])).length; i++) {
+          if ((catalogue.map((first) => first[0]))[i] === letter) {
+              count++;
+          } 
+        }
+        return count
+  }
 
 function countBooksByKeyword(keyword) {
-  // Your code here
-}
+  let count= 0;
+    for (let i = 0; i < catalogue.length; i++) {
+        if (catalogue[i].includes(keyword)) {
+            count++;
+        } 
+      }
+      return count
+    };
 
+
+    // function countBooksByKeyword(keyword) {
+    //   let count = 0;
+    //   for (let i = 0; i < catalogue.length; i++) {
+    //       if (catalogue[i].includes(keyword))
+    //           count++;
+    //       } 
+    //     return count
+    //   };
 function getBooksByAuthor(author) {
-  // Your code here
+  for (let i = 0; i < catalogue.length; i++) {
+    if (catalogue[i].includes(author)) {
+ return catalogue[i];
+    }
+}
 }
 
 module.exports = {
