@@ -31,7 +31,19 @@ describe("catalogueService", () => {
       test("returns no. books starting with given letter", () => {
         expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
       });
-});
+
+      test("returns no. books starting with given letter", () => {
+      expect(catalogueService.countBooksByKeyword("normal")).toBe(2);
+    });
+
+    test("returns no. books starting with given letter", () => {
+      expect(catalogueService.countBooksByKeyword("pineapple")).toBe(0);
+    });
+
+    test("returns no. books starting with given letter", () => {
+      expect(catalogueService.countBooksByKeyword(100)).toBe(0);
+    });
+  });
 
     describe("catalogueService.getBooksByAuthor", () => {
       test("returns  books by set author", () => {
@@ -39,6 +51,16 @@ describe("catalogueService", () => {
         "A Tale of Two Cities by Charles Dickens",
           "Oliver Twist by Charles Dickens",
             "Great Expectations by Charles Dickens"
+]);
+      });
+
+      test("returns  books by set author", () => {
+        expect(catalogueService.getBooksByAuthor("Charles")).toEqual([
+        "A Tale of Two Cities by Charles Dickens",
+          "Oliver Twist by Charles Dickens",
+            "Great Expectations by Charles Dickens",
+            "The Origin of Species by Charles Darwin"
+
 ]);
       });
     });

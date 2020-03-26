@@ -45,12 +45,12 @@ function checkBook(book) {
 function countBooksByKeyword(keyword) {
   let count= 0;
     for (let i = 0; i < catalogue.length; i++) {
-        if (catalogue[i].toLowerCase().includes(keyword.toLowerCase())) {
+        if (catalogue[i].toLowerCase().includes(keyword.toString().toLowerCase())) {
             count++;
-        } 
       }
-      return count;
-    };
+    }
+    return count;
+  };
 
 function getBooksByAuthor(author) {
   let dodah =[];
