@@ -24,7 +24,6 @@ const catalogue = [
 
 function countBooks() {
   return catalogue.length;
-  // Your code here
 }
 
 function checkBook(book) {
@@ -46,28 +45,20 @@ function checkBook(book) {
 function countBooksByKeyword(keyword) {
   let count= 0;
     for (let i = 0; i < catalogue.length; i++) {
-        if (catalogue[i].includes(keyword)) {
+        if (catalogue[i].toLowerCase().includes(keyword.toLowerCase())) {
             count++;
         } 
       }
-      return count
+      return count;
     };
 
-
-    // function countBooksByKeyword(keyword) {
-    //   let count = 0;
-    //   for (let i = 0; i < catalogue.length; i++) {
-    //       if (catalogue[i].includes(keyword))
-    //           count++;
-    //       } 
-    //     return count
-    //   };
 function getBooksByAuthor(author) {
+  let dodah =[];
   for (let i = 0; i < catalogue.length; i++) {
-    if (catalogue[i].includes(author)) {
- return catalogue[i];
-    }
-}
+   if (catalogue[i].includes(author))
+   dodah.push(catalogue[i]);
+  }
+  return dodah;
 }
 
 module.exports = {
